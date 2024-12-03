@@ -1,3 +1,4 @@
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -57,4 +58,29 @@ public static void main(String[] args) throws IOException {
                 System.out.println("Opción no válida. Inténtalo de nuevo.");
         }
     } while (!opcion.equals("5"));
+
+    public static void registrarTarea(String titulo, String descripcion, String fechaVencimiento) {
+        if (contador < MAX_TAREAS) {
+            titulos[contador] = titulo;
+            descripciones[contador] = descripcion;
+            fechasVencimiento[contador] = fechaVencimiento;
+            contador++;
+            System.out.println("Tarea '" + titulo + "' registrada.");
+        } else {
+            System.out.println("No se pueden registrar más tareas. Límite alcanzado.");
+        }
+    }
+
+    public static void listarTareas() {
+        if (contador == 0) {
+            System.out.println("No hay tareas registradas.");
+        } else {
+            for (int i = 0; i < contador; i++) {
+                System.out.println("Título: " + titulos[i] + ", Descripción: " + descripciones[i] + ", Fecha de vencimiento: " + fechasVencimiento[i]);
+            }
+        }
+    }
+
+
 }
+
