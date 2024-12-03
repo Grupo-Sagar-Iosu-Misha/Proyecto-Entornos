@@ -1,15 +1,30 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+    }
+
+    public static void registrarTarea(String titulo, String descripcion, String fechaVencimiento) {
+        if (contador < MAX_TAREAS) {
+            titulos[contador] = titulo;
+            descripciones[contador] = descripcion;
+            fechasVencimiento[contador] = fechaVencimiento;
+            contador++;
+            System.out.println("Tarea '" + titulo + "' registrada.");
+        } else {
+            System.out.println("No se pueden registrar más tareas. Límite alcanzado.");
         }
     }
+
+    public static void listarTareas() {
+        if (contador == 0) {
+            System.out.println("No hay tareas registradas.");
+        } else {
+            for (int i = 0; i < contador; i++) {
+                System.out.println("Título: " + titulos[i] + ", Descripción: " + descripciones[i] + ", Fecha de vencimiento: " + fechasVencimiento[i]);
+            }
+        }
+    }
+
+
 }
