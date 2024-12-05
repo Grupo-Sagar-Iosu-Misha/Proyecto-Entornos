@@ -56,7 +56,68 @@ public static void main(String[] args) throws IOException {
                 System.out.println("Saliendo del programa...");
                 break;
             default:
-                System.out.println("Opción no válida. Inténtalo de nuevo.");
+                System.out.println("Opción no válida. Inténtalo de nuevo.
+                                   }
+    } while (!opcion.equals("5"));
+
+    public static void registrarTarea(String titulo, String descripcion, String fechaVencimiento) {
+        if (contador < MAX_TAREAS) {
+            titulos[contador] = titulo;
+            descripciones[contador] = descripcion;
+            fechasVencimiento[contador] = fechaVencimiento;
+            contador++;
+            System.out.println("Tarea '" + titulo + "' registrada.");
+        } else {
+            System.out.println("No se pueden registrar más tareas. Límite alcanzado.");
+        }
+    }
+
+    public static void listarTareas() {
+        if (contador == 0) {
+            System.out.println("No hay tareas registradas.");
+        } else {
+            for (int i = 0; i < contador; i++) {
+                System.out.println("Título: " + titulos[i] + ", Descripción: " + descripciones[i] + ", Fecha de vencimiento: " + fechasVencimiento[i]);
+            }
+        }
+    }
+
+    public static void actualizarTarea(String titulo, String nuevaDescripcion, String nuevaFechaVencimiento) {
+        for (int i = 0; i < contador; i++) {
+            if (titulos[i].equals(titulo)) {
+                if (nuevaDescripcion != null) {
+                    descripciones[i] = nuevaDescripcion;
+                }
+                if (nuevaFechaVencimiento != null) {
+                    fechasVencimiento[i] = nuevaFechaVencimiento;
+                }
+                System.out.println("Tarea '" + titulo + "' actualizada.");
+                return;
+            }
+        }
+        System.out.println("Tarea '" + titulo + "' no encontrada.");
+    }
+
+    public static void eliminarTarea(String titulo) {
+        for (int i = 0; i < contador; i++) {
+            if (titulos[i].equals(titulo)) {
+                for (int j = i; j < contador - 1; j++) {
+                    titulos[j] = titulos[j + 1];
+                    descripciones[j] = descripciones[j + 1];
+                    fechasVencimiento[j] = fechasVencimiento[j + 1];
+                }
+                titulos[contador - 1] = null;
+                descripciones[contador - 1] = null;
+                fechasVencimiento[contador - 1] = null;
+                contador--;
+                System.out.println("Tarea '" + titulo + "' eliminada.");
+                return;
+            }
+        }
+        System.out.println("Tarea '" + titulo + "' no encontrada.");
+    }
+}
+
         }
     } while (!opcion.equals("5"));
 
@@ -65,4 +126,5 @@ public static void main(String[] args) throws IOException {
 
 
 }
+
 
