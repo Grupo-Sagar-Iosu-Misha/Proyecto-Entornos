@@ -1,3 +1,4 @@
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -7,6 +8,7 @@ static String[] titulos = new String[MAX_TAREAS];
 static String[] descripciones = new String[MAX_TAREAS];
 static String[] fechasVencimiento = new String[MAX_TAREAS];
 static int contador = 0;
+
 
 
 public static void main(String[] args) throws IOException {
@@ -54,8 +56,8 @@ public static void main(String[] args) throws IOException {
                 System.out.println("Saliendo del programa...");
                 break;
             default:
-                System.out.println("Opción no válida. Inténtalo de nuevo.");
-        }
+                System.out.println("Opción no válida. Inténtalo de nuevo.
+                                   }
     } while (!opcion.equals("5"));
 
     public static void registrarTarea(String titulo, String descripcion, String fechaVencimiento) {
@@ -115,3 +117,14 @@ public static void main(String[] args) throws IOException {
         System.out.println("Tarea '" + titulo + "' no encontrada.");
     }
 }
+
+        }
+    } while (!opcion.equals("5"));
+
+
+
+
+
+}
+
+
