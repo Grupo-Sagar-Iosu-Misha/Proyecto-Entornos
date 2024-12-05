@@ -3,8 +3,18 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Main {
+    static final int MAX_TAREAS = 10;
+    static String[] titulos = new String[MAX_TAREAS];
+    static String[] descripciones = new String[MAX_TAREAS];
+    static String[] fechasVencimiento = new String[MAX_TAREAS];
+    static int contador = 0;
 
-    //las funciones que quedan
+
+    public static void main(String[] args) throws IOException {
+        System.out.println("menu aqui");
+    }
+
+
 
     public static void actualizarTarea(String titulo, String nuevaDescripcion, String nuevaFechaVencimiento) {
         for (int i = 0; i < contador; i++) {
